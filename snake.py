@@ -22,6 +22,17 @@ blue = pygame.Color(0, 0, 255) # Food
 black = pygame.Color(0, 0, 0) #score
 white = pygame.Color(255, 255, 255) #background
 
+fpsController = pygame.time.Clock()
+
+snakePos = [360, 230]
+snakeBody = [[360, 230], [350, 230], [340, 230]]
+
+foodPos = [random.randrange(1, 72)*10, random.randrange(1, 46)*10]
+foodSpawn = True
+
+direction = ""
+changeTo = direction
+
 #set up snake and controls
 
 #apples
