@@ -30,8 +30,17 @@ snakeBody = [[360, 230], [350, 230], [340, 230]]
 foodPos = [random.randrange(1, 72)*10, random.randrange(1, 46)*10]
 foodSpawn = True
 
-direction = ""
+direction = ''
 changeTo = direction
+
+#Game over
+def GameOver():
+    myFont = pygame.font.SysFont('monaco', 72)
+    goSurface = myFont.render('GAME OVER', True, red)
+    goRect = goSurface.get_rect()
+    goRect.midtop = (360, 15)
+    playSurface.blit(goSurface, goRect)
+    pygame.display.flip()
 
 #set up snake and controls
 
