@@ -60,5 +60,24 @@ while True:
                 changeTo = 'UP'
             if event.key == pygame.K_RIGHT or event.key == ord('s'):
                 changeTo = 'DOWN'
-            if event.key ++ pygame.K_ESCAPE:
+            if event.key == pygame.K_ESCAPE:
                 pygame.event.post(pygame.event.Event(QUIT))
+
+    if changeTo == 'RIGHT' and direction != 'LEFT': #if fail use not direction
+        direction = 'RIGHT'
+    if changeTo == 'LEFT' and direction != 'RIGHT':
+        direction = 'LEFT'
+    if changeTo == 'UP' and direction != 'DOWN':
+        direction = 'UP'
+    if changeTo == 'DOWN' and direction != 'UP':
+        direction = 'DOWN'
+
+    if direction == 'RIGHT':
+        snakePos[0] += 10
+    if direction == 'LEFT':
+        snakePos[0] -= 10
+    if direction == 'UP':
+        snakePos[1] -= 10
+    if direction == 'DOWN':
+        snakePos[1] += 10
+    
