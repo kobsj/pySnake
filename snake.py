@@ -30,7 +30,7 @@ snakeBody = [[360, 230], [350, 230], [340, 230]]
 foodPos = [random.randrange(1, 72)*10, random.randrange(1, 46)*10]
 foodSpawn = True
 
-direction = ''
+direction = 'RIGHT'
 changeTo = direction
 
 #Game over
@@ -41,9 +41,24 @@ def GameOver():
     goRect.midtop = (360, 15)
     playSurface.blit(goSurface, goRect)
     pygame.display.flip()
+    time.sleep(5)
+    pygame.quit()
+    sys.exit()
 
-#set up snake and controls
-
-#apples
-
-#scoring and score UI
+#Controls
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT or event.key == ord('d'):
+                changeTo = 'RIGHT'
+            if event.key == pygame.K_RIGHT or event.key == ord('a'):
+                changeTo = 'LEFT'
+            if event.key == pygame.K_RIGHT or event.key == ord('w'):
+                changeTo = 'UP'
+            if event.key == pygame.K_RIGHT or event.key == ord('s'):
+                changeTo = 'DOWN'
+            if event.key ++ pygame.K_ESCAPE:
+                pygame.event.post(pygame.event.Event(QUIT))
