@@ -97,5 +97,15 @@ while True:
         pygame.draw.rect(playSurface, green,
         pygame.Rect(pos[0], pos[1], 10, 10))
 
+    pygame.draw.rect(playSurface, blue,
+    pygame.Rect(foodPos[0], foodPos[1], 10, 10))
+
+    if snakePos[0] > 720 or snakePos[0] < 0 or snakePos[1] > 460 or snakePos[1] < 0:
+        GameOver()
+
+    for block in snakeBody[1:]:
+        if snakePos[0] == block[0] and snakePos[1] == block[1]:
+            GameOver()
+
     pygame.display.flip()
-    fpsController.tick(25)
+    fpsController.tick(20)
