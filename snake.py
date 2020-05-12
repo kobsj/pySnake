@@ -43,8 +43,8 @@ def GameOver():
     goRect = goSurface.get_rect()
     goRect.midtop = (360, 15)
     playSurface.blit(goSurface, goRect)
-    pygame.display.flip()
     ShowScore(0)
+    pygame.display.flip()
     time.sleep(5)
     pygame.quit()
     sys.exit()
@@ -58,7 +58,7 @@ def ShowScore(choice = 1):
     else:
         sRect.midtop = (360, 120)
     playSurface.blit(sSurf, sRect)
-    pygame.display.flip()
+
 
 #Controls
 while True:
@@ -124,6 +124,6 @@ while True:
         if snakePos[0] == block[0] and snakePos[1] == block[1]:
             GameOver()
 
-    pygame.display.flip()
     ShowScore()
+    pygame.display.flip()
     fpsController.tick(23)
